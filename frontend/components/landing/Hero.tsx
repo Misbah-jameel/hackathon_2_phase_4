@@ -1,0 +1,164 @@
+import Link from 'next/link';
+import { Button } from '@/components/ui/Button';
+import { ROUTES } from '@/lib/constants';
+
+export function Hero() {
+  return (
+    <section className='relative overflow-hidden py-12 sm:py-20 md:py-32'>
+      {/* Decorative stickers - hidden on mobile for cleaner look */}
+      <div className='sticker top-20 left-10 text-4xl hidden sm:block'>✨</div>
+      <div className='sticker top-40 right-20 text-3xl hidden sm:block' style={{animationDelay: '-0.5s'}}>🚀</div>
+      <div className='sticker bottom-40 left-20 text-3xl hidden md:block' style={{animationDelay: '-1s'}}>💫</div>
+      <div className='sticker bottom-20 right-10 text-4xl hidden md:block' style={{animationDelay: '-1.5s'}}>⭐</div>
+
+      <div className='container mx-auto px-4 relative'>
+        <div className='max-w-3xl mx-auto text-center'>
+          {/* Badge */}
+          <div className='inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-full text-sm font-medium text-primary dark:text-primary-light mb-6 border border-primary/30'>
+            <span>✨</span>
+            Boost your productivity
+          </div>
+
+          {/* Headline */}
+          <h1 className='text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-display'>
+            <span className='text-light-500 dark:text-white'>Manage Your Tasks with </span>
+            <span className='gradient-text'>Style</span>
+            <span className='text-4xl ml-2'>🎨</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className='text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto'>
+            A stunning, cinematic task management app with beautiful animations, 
+            dark mode, and a delightful user experience. ✨
+          </p>
+
+          {/* CTAs */}
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4'>
+            <Link href={ROUTES.SIGNUP} className='w-full sm:w-auto'>
+              <Button size='lg' className='w-full min-h-[52px] sm:min-h-[48px]'>
+                Get Started Free 🚀
+              </Button>
+            </Link>
+            <Link href={ROUTES.LOGIN} className='w-full sm:w-auto'>
+              <Button variant='secondary' size='lg' className='w-full min-h-[52px] sm:min-h-[48px]'>
+                Sign In 👋
+              </Button>
+            </Link>
+          </div>
+
+          {/* GitHub and Live Demo Links */}
+          <div className='flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6'>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white dark:text-gray-900 text-white font-medium text-sm hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg'
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View on GitHub
+            </a>
+            <a
+              href="#demo"
+              className='inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white font-medium text-sm hover:opacity-90 transition-all duration-300 hover:scale-105 shadow-lg animate-pulse-glow'
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+              Live Demo
+            </a>
+          </div>
+
+          {/* Social proof */}
+          <p className='mt-8 text-sm text-gray-500 dark:text-gray-500'>
+            No credit card required • Start organizing in seconds 💖
+          </p>
+        </div>
+
+        {/* Hero Preview */}
+        <div className='mt-16 relative max-w-4xl mx-auto'>
+          <div className='glass rounded-2xl overflow-hidden card-cinematic'>
+            {/* Window controls */}
+            <div className='bg-dark-200/50 dark:bg-dark-200 px-4 py-3 border-b border-dark-border flex items-center gap-2'>
+              <div className='w-3 h-3 rounded-full bg-red-400' />
+              <div className='w-3 h-3 rounded-full bg-yellow-400' />
+              <div className='w-3 h-3 rounded-full bg-green-400' />
+              <span className='ml-4 text-xs text-gray-500'>TodoApp</span>
+            </div>
+            
+            <div className='p-6 md:p-8 bg-dark-100/30 dark:bg-dark-100'>
+              {/* Mock task list */}
+              <div className='space-y-3'>
+                {[
+                  { title: 'Complete project proposal', done: true, emoji: '📝' },
+                  { title: 'Review design mockups', done: true, emoji: '🎨' },
+                  { title: 'Schedule team meeting', done: false, emoji: '📅' },
+                  { title: 'Update documentation', done: false, emoji: '📚' },
+                ].map((task, i) => (
+                  <div
+                    key={i}
+                    className='flex items-center gap-3 p-3 bg-dark-card/50 dark:bg-dark-card rounded-xl border border-dark-border/50 hover:border-primary/50 transition-all duration-300'
+                    style={{animationDelay: i * 0.1 + 's'}}
+                  >
+                    <div
+                      className={`w-5 h-5 rounded-md border-2 flex items-center justify-center transition-all duration-300 ${
+                        task.done
+                          ? 'bg-gradient-to-r from-primary to-secondary border-transparent'
+                          : 'border-gray-400 dark:border-gray-600'
+                      }`}
+                    >
+                      {task.done && (
+                        <svg width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='white' strokeWidth='3'>
+                          <polyline points='20,6 9,17 4,12' />
+                        </svg>
+                      )}
+                    </div>
+                    <span className='mr-2'>{task.emoji}</span>
+                    <span
+                      className={`flex-1 ${
+                        task.done
+                          ? 'line-through text-gray-400 dark:text-gray-500'
+                          : 'text-gray-700 dark:text-gray-300'
+                      }`}
+                    >
+                      {task.title}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Floating badge */}
+          <div className='absolute -top-4 -right-4 bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-medium shadow-glow-pink hidden md:flex items-center gap-2 animate-float'>
+            <span>🎉</span> 2 tasks done!
+          </div>
+          
+          {/* Another floating element */}
+          <div className='absolute -bottom-4 -left-4 bg-gradient-to-r from-secondary to-accent text-white px-4 py-2 rounded-full text-sm font-medium shadow-glow-purple hidden md:flex items-center gap-2 animate-float' style={{animationDelay: '-3s'}}>
+            <span>💜</span> Dark mode
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
